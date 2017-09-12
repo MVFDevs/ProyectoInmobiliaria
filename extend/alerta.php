@@ -17,7 +17,7 @@
   if ($t = 'error') {
     $titulo = "Oppss..";
   }else{
-    $titulo = "Buen trabajo!";
+    $titulo = "Buen trabajos!";
   }
   switch ($c) {
     case 'us':
