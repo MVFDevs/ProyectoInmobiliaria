@@ -15,7 +15,7 @@
   $p = htmlentities($_GET['p']);
   $t = htmlentities($_GET['t']);
   if ($t = 'error') {
-    $titulo = "Oppss..";
+    $titulo = "Ooopss...";
   }else{
     $titulo = "Lo haz hecho bien!";
   }
