@@ -25,7 +25,7 @@ include '../extend/header.php';
            </div>
            <!-- Input para la verificación de la contraseña de usuario -->
            <div class="input-field">
-             <input type="password"  title="CONTRASEÑA CON NUMEROS, LETRAS MAYUSCULAS Y MINUSCULAS ENTRE 8 Y 15 CARACTERES " pattern="[A-Za-z0-9]{8,15}" id="pass2" required>
+             <input type="password"  title="Contraseña con números, letras mayusculas y minusculas entre 8 y 15 caracteres" pattern="[A-Za-z0-9]{8,15}" id="pass2" required>
              <label for="pass2">Verificar contraseña</label>
            </div>
            <!-- Combobox con opciones para determinar el nivel de usuario a registrar -->
