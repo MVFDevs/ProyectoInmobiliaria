@@ -14,22 +14,22 @@
   $c = htmlentities($_GET['c']);
   $p = htmlentities($_GET['p']);
   $t = htmlentities($_GET['t']);
-  if ($t = 'error') {
+  if ($t = "error") {
     $titulo = "Ooopss...";
   }else{
-    $titulo = "Lo haz hecho bien!";
+    $titulo = "Buen trabajo!";
   }
   switch ($c) {
     case 'us':
-      $carpeta = '../usuarios/'
+      $carpeta = '../usuarios/';
       break;
   }
   switch ($p) {
     case 'in':
-      $carpeta = 'index.php';
+      $pagina = 'index.php';
       break;
   }
-  $dir = $carpeta.$pagina;
+$dir = $carpeta.$pagina;
    ?>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.8/sweetalert2.js"></script>
@@ -43,7 +43,15 @@ confirmButtonText: 'Ok'
 }).then(function () {
 location.href='<?php echo $dir ?>';
 });
+$(document).click(function () {
+  location.href='<?php echo $dir ?>';
+});
 
+$(document).keyup(function (e) {
+  if (e.wich == 27) {
+    location.href='<?php echo $dir ?>';
+  }
+});
 </script>
 </body>
 </html>
