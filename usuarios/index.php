@@ -60,6 +60,42 @@ include '../extend/header.php';
      </div>
    </div>
  </div>
+ <?php $sel= $con->query("SELECT * FROM usuario");
+$row = mysqli_num_rows($sel);
+  ?>
+ <div class="row">
+   <div class="col s12">
+     <div class="card">
+       <div class="card-content">
+         <span class="card-tittle">Usuarios(<?php echo $row ?>)</span>
+         <table>
+           <thead>
+             <th>Nick</th>
+             <th>Nombre</th>
+             <th>Correo</th>
+             <th>Nivel</th>
+             <th>Foto</th>
+             <th>Bloqueo</th>
+             <th></th>
+             <th></th>
+           </thead>
+           <?php while($f = $sel->fetch_assoc()){ ?>
+             <tr>
+               <td><?php echo $f['nick'] ?></td>
+               <td><?php echo $f['nombre'] ?></td>
+               <td><?php echo $f['correo'] ?></td>
+               <td><?php echo $f['nivel'] ?></td>
+               <td><img src="<?php echo $f['foto'] ?>" width="50" class="circle"></td>
+               <td><?php echo $f['bloqueo'] ?></td>
+               <td></td>
+               <td></td>
+             </tr>
+           <?php } ?>
+         </table>
+       </div>
+     </div>
+   </div>
+ </div>
  <?php
  include '../extend/scripts.php'
   ?>
