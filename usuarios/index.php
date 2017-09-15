@@ -30,7 +30,7 @@ include '../extend/header.php';
            </div>
            <!-- Combobox con opciones para determinar el nivel de usuario a registrar -->
            <select  name="nivel" required>
-             <option disabled selected value="">ELIGE UN NIVEL DE USUARIO</option>
+             <option disabled selected value="">Elige nivel de usuario</option>
              <option value="ADMINISTRADOR">Administrador</option>
              <option value="ASESOR">Asesor</option>
            </select>
