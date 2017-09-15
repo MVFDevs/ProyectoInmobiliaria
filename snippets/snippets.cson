@@ -1,0 +1,113 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.text.html.php':
+   'Update':
+     'prefix': 'actualizar'
+     'body': """
+     $up= $con->query("UPDATE mitabla SET campo='' WHERE id=''");
+     """
+#'.text.html.php':
+   'Insertar':
+     'prefix': 'guardar'
+     'body': """
+     $ins= $con->query("INSERT INTO mitabla VALUES('')");
+     """
+#'.text.html.php':
+   'Select':
+     'prefix': 'seleccionar'
+     'body': """
+     $sel= $con->query("SELECT * FROM mitabla");
+     """
+#'.text.html.php':
+   'Delete':
+     'prefix': 'borrar'
+     'body': """
+     $del= $con->query("DELETE FROM mitabla WHERE id=''");
+     """
+#'.text.html.php':
+   'Tarjeta basica':
+     'prefix': 'card'
+     'body': """
+     <div class="row">
+       <div class="col s12">
+         <div class="card">
+           <div class="card-content">
+             <span class="card-tittle">Titulo</span>
+             <p>Contenido</p>
+           </div>
+         </div>
+       </div>
+     </div>
+     """
+#'.text.html.php':
+   'Plantilla':
+     'prefix': 'plan'
+     'body': """
+     <?php
+     include '../extend/header.php'
+      ?>
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-tittle">Titulo</span>
+              <p>Contenido</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php
+      include '../extend/scripts.php'
+       ?>
+     </body>
+     </html>
+     """
+    'Input materializze':
+      'prefix': 'input-field'
+      'body': """
+         <div class="input-field">
+           <input type="$1" name="$2"  title="$3" id="$4">
+           <label for="$5">$6</label>
+         </div>
+      """
+    'Mayusculas':
+      'prefix': 'may'
+      'body': """
+          onblur="may(this.value, this.id)"
+      """
+    'html5':
+      'prefix': 'html5'
+      'body': """
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+      </head>
+      <body>
+
+      </body>
+      </html>
+      """
