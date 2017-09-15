@@ -60,9 +60,25 @@ include '../extend/header.php';
      </div>
    </div>
  </div>
+ <!-- buscador para la tabla de usuarios -->
+ <div class="row">
+   <div class="col s12">
+     <nav class="brown lighten-3">
+       <div class="nav-wrapper">
+         <div class="input-field">
+           <input type="search" id="buscar" autocomplete="off">
+           <label for="buscar"><i class="material-icons">search</i></label>
+           <i class="material-icons">close</i>
+         </div>
+       </div>
+     </nav>
+   </div>
+ </div>
+ <!-- busqueda de numero de filas en la BD -->
  <?php $sel= $con->query("SELECT * FROM usuario");
 $row = mysqli_num_rows($sel);
   ?>
+  <!--Tabla de datos de los usuarios en la BD-->
  <div class="row">
    <div class="col s12">
      <div class="card">
@@ -70,6 +86,7 @@ $row = mysqli_num_rows($sel);
          <span class="card-tittle">Usuarios(<?php echo $row ?>)</span>
          <table>
            <thead>
+             <tr class="cabecera">
              <th>Nick</th>
              <th>Nombre</th>
              <th>Correo</th>
@@ -78,6 +95,7 @@ $row = mysqli_num_rows($sel);
              <th>Bloqueo</th>
              <th></th>
              <th></th>
+             </tr>
            </thead>
            <?php while($f = $sel->fetch_assoc()){ ?>
              <tr>
