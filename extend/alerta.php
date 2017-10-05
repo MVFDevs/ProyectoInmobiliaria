@@ -14,11 +14,19 @@
   $c = htmlentities($_GET['c']);
   $p = htmlentities($_GET['p']);
   $t = htmlentities($_GET['t']);
-  if ($t = "error") {
-    $titulo = "Ooopss...";
-  }else{
-    $titulo = "Buen trabajo!";
+  switch ($t) {
+    case 'error':
+      $titulo = "Ooopss...";
+      break;
+    case 'success':
+      $titulo = "Buen trabajo";
+      break;
   }
+  //if ($t = "success") {
+  //  $titulo = "Buen trabajo!";
+  //}else{
+//      $titulo = "Ooopss...";
+  //}
   switch ($c) {
     case 'us':
       $carpeta = '../usuarios/';
