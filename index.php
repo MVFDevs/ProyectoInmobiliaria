@@ -17,7 +17,7 @@ if (isset($_SESSION['nick'])) {
         <main>
           <div class="row">
             <div class="input-field center">
-              <img src="img/logoff.svg" alt="Logo MVFDevs" width="200" class="circle">
+              <img src="img/logofinal.svg" alt="Logo MVFDevs" width="200" class="circle">
             </div>
           </div>
           <div class="container">
