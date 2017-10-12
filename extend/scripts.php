@@ -7,6 +7,7 @@
   $('#buscar').keyup(function(event){
     var contenido = new RegExp($(this).val(),'i');
     $('tr').hide();
+    //filtro del texto que está en el input del buscador
     $('tr').filter(function () {
       return contenido.test($(this).text());
     }).show();

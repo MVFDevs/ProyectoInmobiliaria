@@ -22,19 +22,32 @@
       $titulo = "Buen trabajo";
       break;
   }
-  //if ($t = "success") {
-  //  $titulo = "Buen trabajo!";
-  //}else{
-//      $titulo = "Ooopss...";
-  //}
   switch ($c) {
     case 'us':
       $carpeta = '../usuarios/';
       break;
+    case 'home':
+      $carpeta = '../inicio/';
+      break;
+    case 'salir':
+      $carpeta = '../';
+      break;
+      case 'pe':
+        $carpeta = '../perfil/';
+        break;
   }
   switch ($p) {
     case 'in':
       $pagina = 'index.php';
+      break;
+    case 'home':
+      $pagina = 'index.php';
+      break;
+    case 'salir':
+      $pagina = '';
+      break;
+    case 'perfil':
+      $pagina = 'perfil.php';
       break;
   }
 $dir = $carpeta.$pagina;
