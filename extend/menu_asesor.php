@@ -14,6 +14,8 @@
   </li>
   <li><a href="../inicio"><i class="material-icons">home</i>Inicio</a></li>
   <li><div class="divider"></div></li>
+  <li><a href="../clientes/"><i class="material-icons">contact_phone</i>Clientes</a></li>
+  <li><div class="divider"></div></li>
   <li><a href="../login/salir.php"><i class="material-icons">power_settings_new</i>Salir</a></li>
   <li><div class="divider"></div></li>
 </ul>

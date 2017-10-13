@@ -32,9 +32,12 @@
     case 'salir':
       $carpeta = '../';
       break;
-      case 'pe':
-        $carpeta = '../perfil/';
-        break;
+    case 'pe':
+      $carpeta = '../perfil/';
+      break;
+    case 'cli':
+      $carpeta = '../clientes/';
+      break;
   }
   switch ($p) {
     case 'in':
@@ -49,6 +52,7 @@
     case 'perfil':
       $pagina = 'perfil.php';
       break;
+
   }
 $dir = $carpeta.$pagina;
    ?>
