@@ -38,6 +38,9 @@
     case 'cli':
       $carpeta = '../clientes/';
       break;
+    case 'prop':
+      $carpeta = '../propiedades/';
+      break;
   }
   switch ($p) {
     case 'in':
@@ -52,9 +55,18 @@
     case 'perfil':
       $pagina = 'perfil.php';
       break;
+    case 'img':
+      $pagina = 'imagenes.php';
+      break;
 
   }
-$dir = $carpeta.$pagina;
+  if (isset($_GET['id'])) {
+    $id = htmlentities($_GET['id']);
+    $dir = $carpeta.$pagina.'?id='.$id;
+  }else {
+    $dir = $carpeta.$pagina;
+  }
+
    ?>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.8/sweetalert2.js"></script>

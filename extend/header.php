@@ -33,7 +33,7 @@ if (!isset($_SESSION['nick'])) {
 
         </style>
     </head>
-    <body>
+    <body class="grey lighten-3">
         <main>
           <?php
           if ($_SESSION['nivel'] == 'ADMINISTRADOR') {

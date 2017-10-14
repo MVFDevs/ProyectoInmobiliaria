@@ -66,6 +66,7 @@ $row = mysqli_num_rows($res);
               <th>Teléfono</th>
               <th>Correo</th>
               <th>Asesor</th>
+              <th>Nuevo</th>
               <th></th>
               <th></th>
              </tr>
@@ -77,6 +78,7 @@ $row = mysqli_num_rows($res);
                <td><?php echo $f['tel'] ?></td>
                <td><?php echo $f['correo'] ?></td>
                <td><?php echo $f['asesor'] ?></td>
+               <td><a href="../propiedades/alta_propiedades.php?id=<?php echo $f['id']?>&nombre=<?php echo $f['nombre'] ?>" class="btn-floating green"><i class="material-icons">add</i></a></td>
                <td><a href="editar_cliente.php?id=<?php echo $f['id']?>" class="btn-floating indigo"><i class="material-icons">loop</i></a></td>
                <td><a href="#" class="btn-floating red" onclick="swal({title: 'Estás seguro de eliminar el cliente?',
                text: 'Al eliminarlo no podras recuperarlo',type: 'warning',showCancelButton: true,confirmButtonColor: '#3085d6',
