@@ -58,7 +58,9 @@
     case 'img':
       $pagina = 'imagenes.php';
       break;
-
+    case 'can':
+      $pagina = 'cancelados.php';
+      break;
   }
   if (isset($_GET['id'])) {
     $id = htmlentities($_GET['id']);

@@ -21,7 +21,9 @@ if (!isset($_SESSION['nick'])) {
 .button-collpase{
   display: none;
 }
-
+body{
+  text-transform: uppercase;
+}
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;

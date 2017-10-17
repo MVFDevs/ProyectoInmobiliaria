@@ -12,8 +12,38 @@ $info = pathinfo($imagen);
 $tamano  = getimagesize($ruta);
 $width = $tamano[0];
 $heigth = $tamano[1];
-$con->close();
+if ($info['extension'] == 'jpg' || $info['extension'] == 'JPG') {
+  $imagenvieja = imagecreatefromjpeg($ruta);
+  $nueva = imagecreatetruecolor($ancho,$alto);
+  imagecopyresampled($nueva,$imagenvieja,0,0,0,0,$ancho,$alto,$width,$heigth);
+  $rand = rand(000,999);
+  $copia = "casas/principal-".$rand.$id.'.jpg';
+  imagejpeg($nueva,$copia);
+}elseif ($info['extension'] == 'png' || $info['extension'] == 'PNG') {
+  $imagenvieja = imagecreatefrompng($ruta);
+  $nueva = imagecreatetruecolor($ancho,$alto);
+  imagecopyresampled($nueva,$imagenvieja,0,0,0,0,$ancho,$alto,$width,$heigth);
+  $rand = rand(000,999);
+  $copia = "casas/principal-".$rand.$id.'.png';
+  imagepng($nueva,$copia);
+}else {
+  header('location:../extend/alerta.php?msj=Solo se aceptan formatos JPG y PNG&c=prop&p=img&t=error&id='.$id.'');
+  exit;
+}
+$up = $con->prepare("UPDATE inventario SET foto_principal=? WHERE propiedad =?");
+$up -> bind_param("ss",$copia,$id);
+if ($up -> execute()) {
+  if ($foto != 'casas/foto_principal.png') {
+    unlink($foto);
+  }
+  header('location:../extend/alerta.php?msj=Foto principal actualizada&c=prop&p=img&t=success&id='.$id.'');
+}else {
+  header('location:../extend/alerta.php?msj=La foto no fue actualizada&c=prop&p=img&t=error&id='.$id.'');
+}
+
+$up->close();
   }else {
-    header('location:../extend/alerta.php?msj=Utiliza el formulario&c=prop&p=img&t=error&id='.$id'');
+    $id = htmlentities($_POST['id']);
+    header('location:../extend/alerta.php?msj=Utiliza el formulario&c=prop&p=img&t=error&id='.$id.'');
   }
  ?>

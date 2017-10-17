@@ -24,5 +24,10 @@
   <li><div class="divider"></div></li>
 </ul>
 <ul id="dropdown1" class="dropdown-content">
+  <li><a href="../propiedades/index.php">General</a></li>
   <li><a href="../propiedades/index.php?ope=VENTA">Venta</a></li>
+  <li><a href="../propiedades/index.php?ope=RENTA">Renta</a></li>
+  <li><a href="../propiedades/index.php?ope=TRASPASO">Traspaso</a></li>
+  <li><a href="../propiedades/index.php?ope=OCUPADO">Ocupado</a></li>
+  <li><a href="../propiedades/cancelados.php">Cancelados</a></li>
 </ul>
