@@ -44,7 +44,7 @@ foreach ($_FILES['ruta']['tmp_name'] as $key => $value) {
 if ($ins) {
   header('location:../extend/alerta.php?msj=Imagenes guardadas&c=prop&p=img&t=success&id='.$id.'');
 }else {
-  header('location:../extend/alerta.php?msj=Imagenes no guardadas&c=prop&p=img&t=success&id='.$id.'');
+  header('location:../extend/alerta.php?msj=Imagenes no guardadas&c=prop&p=img&t=error&id='.$id.'');
 }
 $ins->close();
 $con->close();
