@@ -1,10 +1,10 @@
 <?php include '../extend/header.php';
 if (isset($_GET['ope'])) {
   $operacion = $con->real_escape_string(htmlentities($_GET['ope']));
-  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,estado,municipio,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa FROM inventario WHERE estatus = 'ACTIVO'  AND operacion = ?");
+  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,estado,municipio,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa,marcado FROM inventario WHERE estatus = 'ACTIVO'  AND operacion = ?");
   $sel->bind_param('s',$operacion);
 }else {
-  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,estado,municipio,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa FROM inventario WHERE estatus = 'ACTIVO'");
+  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,estado,municipio,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa,marcado FROM inventario WHERE estatus = 'ACTIVO'");
 
 }
 
@@ -37,6 +37,7 @@ if (isset($_GET['ope'])) {
           <thead>
             <tr class="cabecera">
               <th class="borrar">Vista</th>
+              <th></th>
               <th>Num</th>
               <th>Cliente</th>
               <th>Propiedad</th>
@@ -54,6 +55,13 @@ if (isset($_GET['ope'])) {
           while ($f =$res->fetch_assoc()) {?>
             <tr>
               <td class="borrar"><button data-target="modal1" onclick="enviar(this.value)" value="<?php echo $f['propiedad']?>" class="btn modal-trigger btn-floating"><i class="material-icons">visibility</i></button></td>
+              <td>
+                <?php if ($f['marcado'] == ''): ?>
+                  <a href="marcado.php?id=<?php echo $f['propiedad']?>&marcado=SI"><i class=" small grey-text material-icons">grade</i></a>
+                  <?php else: ?>
+                    <a href="marcado.php?id=<?php echo $f['propiedad']?>&marcado="><i class=" small green-text material-icons">grade</i></a>
+                <?php endif; ?>
+              </td>
               <td><?php echo $f['consecutivo'] ?></td>
               <td><?php echo $f['nombre_cliente'] ?></td>
               <td><?php echo $f['calle_num'].' '.$f['fraccionamiento'].' '.$f['estado'].' ,'.$f['municipio'] ?></td>
